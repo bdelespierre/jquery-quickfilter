@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Jquery - QuickFilter</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.quickfilter-0.0.1.js"></script>
+<script type="text/javascript">
+$(function () {
+    $('#list').quickFilter();
+});
+</script>
+</head>
+<body>
+<input type="text" rel="filter" />
+<ul id="list">
+    <li>There's one quick brown fox</li>
+    <li>There's 2 lazy dogs</li>
+    <li>There's 3 monkeys on the tree</li>
+    <li>There's 4 lazy lions</li>
+    <li>There's 5 karmik koalas on the tree</li>
+</ul>
+</body>
+</html>
