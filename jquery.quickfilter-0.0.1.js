@@ -13,15 +13,18 @@
         
         var o = arguments[0] || {},
             p = {
-                handle: 'input[rel="filter"]'
+                handle: 'input[rel="filter"]',
+                callback: function () {}
             };
             
         $.extend(p,o);
         
         return this.each(function (i,n) {
             $(p.handle).keyup(function () {
+                var v = $(this).val();
                 $('*',n).show();
-                $(':not(:contains('+$(this).val()+'))',n).hide();
+                if (v) $(':not(:contains('+v+'))',n).hide();
+                p.callback.call(this, v);
             });
         });
     };

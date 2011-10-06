@@ -8,7 +8,9 @@
 <script type="text/javascript" src="jquery.quickfilter-0.0.1.js"></script>
 <script type="text/javascript">
 $(function () {
-    $('#list').quickFilter();
+    $('#list').quickFilter({ callback: function (val) {
+        console.log(this, val);
+    }});
 });
 </script>
 </head>
