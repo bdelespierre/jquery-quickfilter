@@ -19,12 +19,20 @@
             
         $.extend(p,o);
         
+        var filter = function (event, value) {
+            $('*',this).show();
+            if (value) $(':not(:contains('+value+'))',this).hide();
+            p.callback.call(this, value);
+        };
+        
+        var clear = function (event) {
+            $(this).trigger('filter');
+        }
+        
         return this.each(function (i,n) {
-            $(p.handle).keyup(function () {
-                var v = $(this).val();
-                $('*',n).show();
-                if (v) $(':not(:contains('+v+'))',n).hide();
-                p.callback.call(this, v);
+            $(n).bind('filter', filter).bind('clear', clear);
+            $(p.handle).bind('keyup.filter', function (event) {
+                $(n).trigger('filter', [$(this).val()]);
             });
         });
     };

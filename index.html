@@ -8,20 +8,26 @@
 <script type="text/javascript" src="jquery.quickfilter-0.0.1.js"></script>
 <script type="text/javascript">
 $(function () {
-    $('#list').quickFilter({ callback: function (val) {
-        console.log(this, val);
-    }});
+    $('#list').quickFilter();
+    $('.value').click(function () { $('#list').trigger('filter', $(this).val()); });
+    $('.clear').click(function () { $('#list').trigger('clear'); });
 });
 </script>
 </head>
 <body>
 <input type="text" rel="filter" />
+<input type="button" class="value" value="lazy" />
+<input type="button" class="value" value="dog" />
+<input type="button" class="value" value="fox" />
+<input type="button" class="clear" value="clear" />
 <ul id="list">
     <li>There's one quick brown fox</li>
     <li>There's 2 lazy dogs</li>
     <li>There's 3 monkeys on the tree</li>
     <li>There's 4 lazy lions</li>
     <li>There's 5 karmik koalas on the tree</li>
+    <li>There's many dos around here</li>
+    <li>The last item is either a dog, a fox or a tree with koalas !</li>
 </ul>
 </body>
 </html>
