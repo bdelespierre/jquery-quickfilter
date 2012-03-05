@@ -6,18 +6,18 @@ Author: Benjamin Delespierre <benjamin.delespierre@gmail.com>
 Description
 -----------
 
-Quick and dirty implementation for data filtering on input.
+Quick and easy implementation of list filtering based on user input.
+[demo](http://bdelespierre.github.com/jquery-quickfilter)
 
 Usage
 -----
 
-$('#list').quickFilter();
+    $('#list').quickFilter(options);
+    
+Options
+-------
 
-// or
+* [string] handle: The jQuery selector of the handle input
+* [callback] callback: The callback to call once filtering is done
 
-$('#list').quickFilter({
-    handle: 'input#filter',
-    callback: function (val) {
-        console.log(this, val);
-    }
-});
+
