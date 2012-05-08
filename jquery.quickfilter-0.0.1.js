@@ -2,7 +2,7 @@
 /**
  * Quick Filter for Jquery
  * @author Benjamin Delespierre <benjamin.delespierre@gmail.com>
- * @version 0.0.2
+ * @version 0.0.3
  * @package jQuery
  * @license GNU Lesser General Public License
  */
@@ -25,8 +25,8 @@
         $.extend(p,o);
         
         var filter = function (event, value) {
-            $('*',this).show();
-            if (value) $(':not('+((p.caseSensitive&&':contains')||':containsi')+'('+value+'))',this).hide();
+            $('>*',this).show();
+            if (value) $('>:not('+((p.caseSensitive&&':contains')||':containsi')+'('+value+'))',this).hide();
             p.callback.call(this, value);
         };
         
