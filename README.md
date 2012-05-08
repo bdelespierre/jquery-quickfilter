@@ -19,5 +19,6 @@ Options
 
 * [string] handle: The jQuery selector of the handle input
 * [callback] callback: The callback to call once filtering is done
+* [boolean] caseSensitive: The filtering become case sensitive or not
 
 
