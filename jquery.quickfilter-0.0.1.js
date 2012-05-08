@@ -2,7 +2,7 @@
 /**
  * Quick Filter for Jquery
  * @author Benjamin Delespierre <benjamin.delespierre@gmail.com>
- * @version 0.0.1
+ * @version 0.0.2
  * @package jQuery
  * @license GNU Lesser General Public License
  */
