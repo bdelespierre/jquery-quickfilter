@@ -9,19 +9,24 @@
 
 (function ($) {
     
+    jQuery.expr[':'].containsi = function(a,i,m){
+        return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase())>=0;
+    };
+    
     $.fn.quickFilter = function () {
         
         var o = arguments[0] || {},
             p = {
                 handle: 'input[rel="filter"]',
-                callback: function () {}
+                callback: function () {},
+                caseSensitive: true
             };
             
         $.extend(p,o);
         
         var filter = function (event, value) {
             $('*',this).show();
-            if (value) $(':not(:contains('+value+'))',this).hide();
+            if (value) $(':not('+((p.caseSensitive&&':contains')||':containsi')+'('+value+'))',this).hide();
             p.callback.call(this, value);
         };
         
